@@ -1,0 +1,36 @@
+.bgcol{
+    background-color: #B7B7A4;
+    padding-left: 200px;
+   
+    
+}
+
+.button{
+    margin-right: 100px;
+}
+
+.title{
+   text-align: center;
+   padding-top: 100px;
+   padding-bottom: 20px;
+   
+}
+
+.descrip{
+    text-align: center;
+    background-color:#B7B7A4;
+    padding: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+    opacity: 0.8;
+
+    border-radius: 25px;
+}
+
+.descrip p{
+    margin-top: 40px;
+  
+}
+.bg_img{
+ height: 700px;
+}

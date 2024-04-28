@@ -1,17 +1,13 @@
-import './App.css';
+import React from 'react';
+
+import NavbarEl from './components/Navbar';
+import ImgOverview from './components/Overview';
 
 function App() {
   return (
     <div className="App">
-      <header >
-       
-        <p>
-         <h1>
-          Hello world!
-         </h1>
-        </p>
-        
-      </header>
+      <NavbarEl/>
+      <ImgOverview/>
     </div>
   );
 }
