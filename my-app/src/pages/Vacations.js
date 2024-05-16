@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import './Vacation.css';
 
 
@@ -67,6 +68,17 @@ function Vacations() {
   return (
     <div>
       <h2>Available Vacations</h2>
+      <h2>
+      <Link to="/add">
+      <Button variant="secondary" type="submit" className="button">
+        + Add vacation
+      </Button>
+      </Link>
+      </h2>
+        
+    
+      
+
       <Form.Group controlId="filterType" className="row">
   <Form.Label className="col-sm-12 col-md-9 text-md-end">Filter Type:</Form.Label>
   <div className="col-sm-12 col-md-2 d-flex justify-content-end">
