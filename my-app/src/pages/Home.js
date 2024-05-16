@@ -1,3 +1,14 @@
-export default function Home() {
-    return <h1>Home</h1>
+import React from 'react';
+import ImgOverview from '../components/Overview';
+
+
+  function Home() {
+    return (
+      <div>
+        <ImgOverview/>
+     
+      </div>
+    );
   }
+  
+  export default Home;

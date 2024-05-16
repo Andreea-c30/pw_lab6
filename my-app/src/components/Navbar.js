@@ -8,7 +8,7 @@ function NavbarEl() {
   return (
     <Navbar expand="lg" className="bgcol">
       <Container fluid >
-        <Navbar.Brand href="#" className="bgcol" >Explore Ease</Navbar.Brand>
+        <Navbar.Brand href="/home" className="bgcol" >Explore Ease</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -16,9 +16,9 @@ function NavbarEl() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#plans">Plans</Nav.Link>
-            <Nav.Link href="#vacantions">Vacantions</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/add">New Vacation</Nav.Link>
+            <Nav.Link href="/vacations">Vacations</Nav.Link>
       
           </Nav>
           <Form className="d-flex">
