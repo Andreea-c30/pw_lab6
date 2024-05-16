@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import { Link } from 'react-router-dom';
 import './Vacation.css';
 
 function AddVacation() {
@@ -94,10 +95,16 @@ function AddVacation() {
           <option>Mountain Retreat</option>
         </Form.Select>
       </Form.Group>
-
+      
       <Button variant="secondary" type="submit" className="button">
         Add vacation
       </Button>
+      
+      <Link to="/vacations">
+      <Button variant="secondary" type="submit" className="button">
+        Check available vacations
+      </Button>
+      </Link>
     </Form>
   );
 }
