@@ -1,0 +1,165 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Vacation API
+  description: This is a sample server for vacations management.
+basePath: /
+tags:
+  - name: vacations
+    description: Operations about vacations
+schemes:
+  - http
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+paths:
+  /token:
+    get:
+      tags:
+        - vacations
+      summary: Generate JWT token
+      description: |
+        Generate a JWT token with optional role claim.
+      parameters:
+        - name: role
+          in: query
+          description: Role claim for the JWT token
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            type: object
+            properties:
+              jwt:
+                type: string
+  /vacations:
+    post:
+      tags:
+        - vacations
+      summary: Create a new vacation
+      description: Create a new vacation entry.
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: vacation
+          description: Vacation object
+          required: true
+          schema:
+            $ref: '#/definitions/Vacation'
+      responses:
+        '201':
+          description: Vacation created successfully
+        '403':
+          description: No permissions
+    get:
+      tags:
+        - vacations
+      summary: Get a list of vacations
+      description: Get a list of all vacations.
+      security:
+        - Bearer: []
+      responses:
+        '200':
+          description: List of vacations
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vacation'
+        '403':
+          description: No permissions
+  /vacations/{vacation_id}:
+    get:
+      tags:
+        - vacations
+      summary: Get a vacation by ID
+      description: Get details of a specific vacation by its ID.
+      parameters:
+        - name: vacation_id
+          in: path
+          description: ID of the vacation to retrieve
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Vacation data
+          schema:
+            $ref: '#/definitions/Vacation'
+        '404':
+          description: Vacation not found
+    put:
+      tags:
+        - vacations
+      summary: Update an existing vacation
+      description: Update details of a specific vacation by its ID.
+      parameters:
+        - name: vacation_id
+          in: path
+          description: ID of the vacation to update
+          required: true
+          type: integer
+          format: int64
+        - in: body
+          name: vacation
+          description: Updated vacation object
+          required: true
+          schema:
+            $ref: '#/definitions/Vacation'
+      security:
+        - Bearer: []
+      responses:
+        '200':
+          description: Vacation updated successfully
+        '403':
+          description: No permissions
+        '404':
+          description: Vacation not found
+    delete:
+      tags:
+        - vacations
+      summary: Delete a vacation
+      description: Delete a specific vacation by its ID.
+      parameters:
+        - name: vacation_id
+          in: path
+          description: ID of the vacation to delete
+          required: true
+          type: integer
+          format: int64
+      security:
+        - Bearer: []
+      responses:
+        '200':
+          description: Vacation deleted successfully
+        '403':
+          description: No permissions
+        '404':
+          description: Vacation not found
+definitions:
+  Vacation:
+    type: object
+    properties:
+      departure_date:
+        type: string
+        format: date
+      departure_time:
+        type: string
+      return_date:
+        type: string
+        format: date
+      return_time:
+        type: string
+      location:
+        type: string
+      accommodation_address:
+        type: string
+      number_of_persons:
+        type: integer
+        format: int32
+      holiday_type:
+        type: string
