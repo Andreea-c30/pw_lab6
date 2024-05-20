@@ -1,0 +1,47 @@
+.form{
+    background-color: #B7B7A4;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-radius: 25px;
+    padding: 50px;
+   
+}
+.button{
+    background-color: #B7B7A4;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+h2{
+    text-align: center;
+}
+.bg{
+    background-color: #B7B7A4;
+ 
+}
+.bgcard{
+    background-color: #dedec4;
+    padding: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 25px;
+}
+.remove {
+    display: inline-block;
+    text-align: right; 
+    background-image: url('../components/img/bin.png'); 
+    background-size: contain;
+    background-position: center; 
+   
+    border: none; 
+    color: white; 
+    font-size: 16px; 
+    cursor: pointer; 
+    width: 25px;
+    height: 25px;
+ 
+     }
+
+.inline{
+    padding: 50px;
+}
