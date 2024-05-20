@@ -6,7 +6,7 @@ import ImgOverview from '../components/Overview';
     return (
       <div>
         <ImgOverview/>
-        {/* Add your content here */}
+
       </div>
     );
   }

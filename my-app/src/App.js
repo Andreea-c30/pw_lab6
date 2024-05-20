@@ -7,8 +7,6 @@ import Vacations from './pages/Vacations';
 import Home from './pages/Home';
 import { jwtDecode } from "jwt-decode";
 
-
-
 function App() {
   const [role, setRole] = useState(localStorage.getItem('userRole') || '');
   const [jwt, setJwt] = useState(localStorage.getItem('jwt') || null);
@@ -50,6 +48,7 @@ function App() {
           <Route path="/add" element={<AddVacation role={role} jwt={jwt} />} />
           <Route path="/vacations" element={<Vacations role={role} jwt={jwt} />} />
           <Route path="/about" element={<About role={role} />} />
+
         </Routes>
       </div>
     </Router>
