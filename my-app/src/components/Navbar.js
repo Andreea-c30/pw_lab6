@@ -8,8 +8,9 @@ function NavbarEl() {
   return (
     <Navbar expand="lg" className="bgcol">
       <Container fluid >
-        <Navbar.Brand href="/home" className="bgcol" >Explore Ease</Navbar.Brand>
-       
+
+        <Navbar.Brand className="bgcol" >Explore Ease</Navbar.Brand>
+
       </Container>
     </Navbar>
   );
